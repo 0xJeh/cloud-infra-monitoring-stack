@@ -1,0 +1,78 @@
+# Cloud Infrastructure Monitoring Stack Configuration
+
+cloud_providers:
+  aws:
+    enabled: true
+    regions:
+      - us-east-1
+      - us-west-2
+    # AWS credentials will be read from environment or ~/.aws/credentials
+  
+  azure:
+    enabled: false
+    subscription_id: your-subscription-id
+    # Azure credentials from environment or az cli
+  
+  gcp:
+    enabled: false
+    project_id: your-project-id
+    # GCP credentials from GOOGLE_APPLICATION_CREDENTIALS
+
+# Elasticsearch configuration
+elasticsearch:
+  enabled: true
+  host: localhost
+  port: 9200
+  index_prefix: cloud-metrics
+  # username: elastic
+  # password: changeme
+
+# Kibana configuration
+kibana:
+  enabled: true
+  host: localhost
+  port: 5601
+
+# Grafana configuration
+grafana:
+  enabled: true
+  host: localhost
+  port: 3000
+  api_key: your-grafana-api-key
+  # username: admin
+  # password: admin
+
+# Datadog configuration (optional)
+datadog:
+  enabled: false
+  api_key: your-datadog-api-key
+  app_key: your-datadog-app-key
+  site: datadoghq.com
+
+# Alert thresholds
+alerts:
+  cpu_threshold: 80
+  memory_threshold: 85
+  disk_threshold: 90
+  network_threshold: 1000000  # bytes per second
+
+# Notification channels
+notification_channels:
+  email:
+    enabled: true
+    addresses:
+      - alerts@example.com
+  
+  slack:
+    enabled: false
+    webhook_url: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+  
+  pagerduty:
+    enabled: false
+    integration_key: your-pagerduty-key
+
+# Collection settings
+collection:
+  interval: 60  # seconds
+  batch_size: 100
+  retention_days: 30
