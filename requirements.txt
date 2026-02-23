@@ -1,0 +1,18 @@
+# Core dependencies
+pyyaml>=6.0
+requests>=2.28.0
+python-dateutil>=2.8.2
+
+# Cloud providers
+boto3>=1.26.0
+azure-mgmt-monitor>=5.0.0
+google-cloud-monitoring>=2.11.0
+
+# Monitoring platforms
+elasticsearch>=8.0.0
+datadog>=0.44.0
+prometheus-client>=0.15.0
+
+# Optional utilities
+click>=8.0.0
+coloredlogs>=15.0
